@@ -27,7 +27,6 @@ build-job:
         paths:
             - build/  
 
-
 test-job:
     stage: test and lint
     script:
@@ -46,7 +45,7 @@ pages:
     image: alpine:latest
     stage: deploy
     variables:
-    GIT_STRATEGY: none
+        GIT_STRATEGY: none
     script:
         - echo "Deploying public/ directory..."
         - mv build public
