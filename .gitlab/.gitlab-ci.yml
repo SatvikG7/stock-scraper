@@ -9,8 +9,6 @@ stages:
 cache:
     paths:
         - node_modules/
-        - build/
-        - coverage/
 
 install-job:
     stage: install
@@ -25,6 +23,10 @@ build-job:
         - echo "Compiling *.md"
         - yarn build
         - echo "Compiled *.md to build/*.html."
+    artifacts:
+        paths:
+            - build/  
+
 
 test-job:
     stage: test and lint
@@ -41,14 +43,16 @@ lint-job:
         - echo "No lint issues found."
 
 pages:
+    image: alpine:latest
     stage: deploy
+    variables:
+    GIT_STRATEGY: none
     script:
         - echo "Deploying public/ directory..."
-        - mkdir public
-        - cp -r build public
+        - mv build public
         - echo "Deployed public/ directory..."
     artifacts:
         paths:
-            - public/
+            - public
     only:
         - main
