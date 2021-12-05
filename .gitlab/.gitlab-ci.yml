@@ -43,9 +43,12 @@ lint-job:
 pages:
     stage: deploy
     script:
-        - echo "Deploying build/ directory...""
+        - echo "Deploying public/ directory...""
+        - mkdir public
+        - cp build public
+        - echo "Deployed public/ directory...""
     artifacts:
         paths:
-            - build/
+            - public/
     only:
         - main
