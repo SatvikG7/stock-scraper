@@ -43,7 +43,7 @@ lint-job:
 pages:
     stage: deploy
     script:
-        - echo "Deploying public/ directory...""
+        - echo "Deploying public/ directory..."
         - mkdir public
         - cp build public
         - echo "Deployed public/ directory..."
