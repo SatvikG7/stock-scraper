@@ -1,5 +1,8 @@
 # Stock Scraper Api
 
+<!-- markdownlint-disable MD001 MD013 -->
+[![pipeline status](https://gitlab.com/SatvikG7/stock-scraper/badges/main/pipeline.svg)](https://gitlab.com/SatvikG7/stock-scraper/-/commits/main) [![Coverage Status](https://coveralls.io/repos/gitlab/SatvikG7/stock-scraper/badge.svg?branch=main)](https://coveralls.io/gitlab/SatvikG7/stock-scraper?branch=main)
+
 Api for scraping value of stock from Google Finance or Yahoo Finance(Coming Soon).
 
 ## Getting started
