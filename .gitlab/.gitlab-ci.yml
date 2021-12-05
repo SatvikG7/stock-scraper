@@ -1,0 +1,51 @@
+image: node:16.13.1
+
+stages:
+    - install
+    - build
+    - test and lint
+    - deploy
+
+cache:
+    paths:
+        - node_modules/
+        - build/
+        - coverage/
+
+install-job:
+    stage: install
+    script:
+        - echo "Installing dependencies..."
+        - yarn install
+        - echo "Installed dependencies."
+
+build-job:
+    stage: build
+    script:
+        - echo "Compiling *.md"
+        - yarn build
+        - echo "Compiled *.md to build/*.html."
+
+test-job:
+    stage: test and lint
+    script:
+        - echo "Running unit tests..."
+        - yarn test
+        - echo "All unit tests completed with no error."
+
+lint-job:
+    stage: test and lint
+    script:
+        - echo "Linting code..."
+        - yarn lint
+        - echo "No lint issues found."
+
+pages:
+    stage: deploy
+    script:
+        - echo "Deploying build/ directory...""
+    artifacts:
+        paths:
+            - build/
+    only:
+        - main

@@ -1,0 +1,6 @@
+.gitlab
+.gitignore
+.env
+.env.example
+.nyc_output
+coverage
