@@ -46,7 +46,7 @@ pages:
         - echo "Deploying public/ directory...""
         - mkdir public
         - cp build public
-        - echo "Deployed public/ directory...""
+        - echo "Deployed public/ directory..."
     artifacts:
         paths:
             - public/
