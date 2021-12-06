@@ -35,14 +35,14 @@ build-job:
             - build/ 
  
 lint-job:
-    stage: test and lint
+    stage: lint and test
     script:
         - echo "Linting code..."
         - yarn lint
         - echo "No lint issues found."
 
 test-job:
-    stage: test and lint
+    stage: lint and test
     script:
         - echo "Running unit tests..."
         - yarn test
