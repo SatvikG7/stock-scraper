@@ -9,10 +9,10 @@
 	"scripts": {
 		"start": "fastify start -l info app.js",
 		"dev": "fastify start -w -l info -P app.js",
-		"test": "tap \"test/**/*.test.js\" --coverage",
+		"test": "tap \"test/**/*.test.js\" --coverage --coverage-report=lcov",
 		"build": "node ./scripts/build.js",
 		"postbuild": "prettier --write .",
-		"lint": "eslint --fix --ext .js {routes,scripts,test,utils}/*.js {routes,test}/**/*.js"
+		"lint": "eslint --fix --ext .js app.js {routes,scripts,test,utils}/*.js {routes,test}/**/*.js"
 	},
 	"repository": {
 		"type": "git",
@@ -48,6 +48,7 @@
 		"eslint-plugin-prettier": "^4.0.0",
 		"highlight.js": "^11.3.1",
 		"marked": "^4.0.6",
+		"pino-pretty": "^7.2.0",
 		"prettier": "2.5.0",
 		"tap": "^15.0.9"
 	}
