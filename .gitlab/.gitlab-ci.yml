@@ -71,7 +71,7 @@ production-job:
         - main
 
 pages:
-    image: alpine:latest
+    image: ruby:latest
     stage: deploy
     variables:
         GIT_STRATEGY: none
