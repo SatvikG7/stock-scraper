@@ -4,12 +4,12 @@ WORKDIR /usr/src/app
 
 COPY package.json yarn.lock ./
 
-RUN npm install -g yarn
-
 RUN yarn install --frozen-lockfile
 
 COPY . ./
 
 RUN yarn build
 
-CMD [ "yarn", "start" ]
+EXPOSE 5000
+
+CMD [ "yarn", "start", "--port", "5000" ]
