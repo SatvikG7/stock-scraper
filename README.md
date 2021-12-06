@@ -9,12 +9,12 @@ Api for scraping value of stock from Google Finance or Yahoo Finance(Coming Soon
 
 ### Documentation
 
-Visit [https:/stock-scraper.ml/docs/](https:/stock-scraper.ml/docs/) for detailed documentation of api
+Visit [https:/stock-scraper-api.herokuapp.com/docs](https:/stock-scraper-api.herokuapp.com/docs/) for detailed documentation of api
 
 ### Endpoints
 
--   [https:/stock-scraper.ml/api/](https:/stock-scraper.ml/api/)
--   [https:/stock-scraper.ml/api/:ticker/:exchange/](https:/stock-scraper.ml/api/:ticker/:exchange/)
+-   [https:/stock-scraper-api.herokuapp.com/api/](https:/stock-scraper-api.herokuapp.com/api/)
+-   [https:/stock-scraper-api.herokuapp.com/api/:ticker/:exchange](https:/stock-scraper-api.herokuapp.com/api/:ticker/:exchange)
 
 ### Examples
 
@@ -26,7 +26,7 @@ Visit [https:/stock-scraper.ml/docs/](https:/stock-scraper.ml/docs/) for detaile
     	"x-api-key": "your-key"
     };
 
-    fetch("https:/stock-scraper.ml/api/", {
+    fetch("https:/stock-scraper-api.herokuapp.com/api/", {
     	method: "GET",
     	headers: headersList
     })
@@ -46,7 +46,7 @@ Visit [https:/stock-scraper.ml/docs/](https:/stock-scraper.ml/docs/) for detaile
     	"x-api-key": "your-key"
     };
 
-    fetch("https:/stock-scraper.ml/api/MSFT/NASDAQ", {
+    fetch("https:/stock-scraper-api.herokuapp.com/api/MSFT/NASDAQ", {
     	method: "GET",
     	headers: headersList
     })
