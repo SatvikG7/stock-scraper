@@ -1,9 +1,16 @@
 image: node:16.13.1
 
+before_script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+
 stages:
     - install
     - build
     - test and lint
+    - staging
+    - production
     - deploy
 
 cache:
@@ -40,6 +47,28 @@ lint-job:
         - echo "Linting code..."
         - yarn lint
         - echo "No lint issues found."
+
+staging-job:
+    type: deploy
+    stage: staging
+    image: ruby:latest
+    script:
+        - echo "[Staging] Deploying to heroku..."
+        - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY
+        - echo "[Staging] Deployed to heroku."
+    only:
+        - staging
+
+production-job:
+    type: deploy
+    stage: production
+    image: ruby:latest
+    script:
+        - echo "[Production] Deploying to heroku..."
+        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+        - echo "[Production] Deployed to heroku."
+    only:
+        - main
 
 pages:
     image: alpine:latest
