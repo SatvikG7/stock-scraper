@@ -8,7 +8,7 @@ before_script:
 stages:
     - install
     - build
-    - test and lint
+    - lint and test
     - staging
     - production
     - deploy
@@ -32,7 +32,14 @@ build-job:
         - echo "Compiled *.md to build/*.html."
     artifacts:
         paths:
-            - build/  
+            - build/ 
+ 
+lint-job:
+    stage: test and lint
+    script:
+        - echo "Linting code..."
+        - yarn lint
+        - echo "No lint issues found."
 
 test-job:
     stage: test and lint
@@ -40,13 +47,6 @@ test-job:
         - echo "Running unit tests..."
         - yarn test
         - echo "All unit tests completed with no error."
-
-lint-job:
-    stage: test and lint
-    script:
-        - echo "Linting code..."
-        - yarn lint
-        - echo "No lint issues found."
 
 staging-job:
     type: deploy
