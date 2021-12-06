@@ -18,6 +18,10 @@
 		"type": "git",
 		"url": "git+ssh://git@gitlab.com/SatvikG7/stock-scraper.git"
 	},
+	"homepage": "https://satvikg7.gitlab.io/stock-scraper/",
+	"bugs": {
+		"url": "https://gitlab.com/SatvikG7/stock-scraper/issues"
+	},
 	"keywords": [
 		"node",
 		"fastify",
