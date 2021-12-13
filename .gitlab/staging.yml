@@ -1,8 +1,8 @@
 image: ruby:latest
 
 before_script:
-    - apt upgrade -qy
-    - apt add -y ruby-dev
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
     - gem install dpl
 
 stages:
@@ -20,7 +20,7 @@ staging-heroku-job:
 
 staging-gae-job:
     type: deploy
-    image: google/cloud-sdk:alpine
+    image: google/cloud-sdk:slim
     stage: staging
     script:
         - echo "[Staging] Deploying to gae..."
