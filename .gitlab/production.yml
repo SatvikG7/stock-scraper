@@ -11,7 +11,7 @@ stages:
 
 production-heroku-job:
     type: deploy
-    stage: production-heroku
+    stage: production
     script:
         - echo "[Production] Deploying to heroku..."
         - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
@@ -22,7 +22,7 @@ production-heroku-job:
 production-gae-job:
     type: deploy
     image: google/cloud-sdk:alpine
-    stage: production-gae
+    stage: production
     script:
         - echo "[Production] Deploying to gae..."
         - echo $SERVICE_ACCOUNT > SERVICE_ACCOUNT.json
