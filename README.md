@@ -10,7 +10,7 @@ Api for scraping value of stock from Google Finance or Yahoo Finance(Coming Soon
 
 ### Documentation
 
-Visit [https:/stock-scraper-api.herokuapp.com/docs](https:/stock-scraper-api.herokuapp.com/docs/) for detailed documentation of api
+Visit [https:/stock-scraper-api.herokuapp.com/docs](https:/stock-scraper-api.herokuapp.com/docs) for detailed documentation of api
 
 ### Endpoints
 
