@@ -42,12 +42,12 @@ test-job:
 
 staging:
     trigger:
-    include: .gitlab/staging.yml
+        include: .gitlab/staging.yml
     only:
         - staging
 
 production:
     trigger:
-    include: .gitlab/production.yml
+        include: .gitlab/production.yml
     only:
         - main
