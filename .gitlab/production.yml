@@ -25,7 +25,7 @@ production-gae-job:
     script:
         - echo "[Production] Deploying to gae..."
         - echo $SERVICE_ACCOUNT > SERVICE_ACCOUNT.json
-        - dpl gae --project=$GAE_ID --keyfile=SERVICE_ACCOUNT.json
+        - dpl --provider=gae --project=$GAE_ID --keyfile=SERVICE_ACCOUNT.json
         - echo "[Production] Deployed to gae."
     only:
         - main
