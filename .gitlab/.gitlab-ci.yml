@@ -40,13 +40,13 @@ test-job:
         - yarn test
         - echo "All unit tests completed with no error."
 
-staging:
+staging-job:
     trigger:
         include: .gitlab/staging.yml
     only:
         - staging
 
-production:
+production-job:
     trigger:
         include: .gitlab/production.yml
     only:
