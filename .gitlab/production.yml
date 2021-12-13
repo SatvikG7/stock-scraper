@@ -21,7 +21,7 @@ production-heroku-job:
 
 production-gae-job:
     type: deploy
-    image: google/cloud-sdk:alpine
+    image: google/cloud-sdk:slim
     stage: production
     script:
         - echo "[Production] Deploying to gae..."
