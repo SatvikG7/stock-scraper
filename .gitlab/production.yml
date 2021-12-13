@@ -1,0 +1,45 @@
+image: ruby:latest
+
+before_script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+
+stages:
+    - production
+    - pages-deploy
+
+production-heroku-job:
+    type: deploy
+    stage: production-heroku
+    script:
+        - echo "[Production] Deploying to heroku..."
+        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+        - echo "[Production] Deployed to heroku."
+    only:
+        - main
+
+production-gae-job:
+    type: deploy
+    stage: production-gae
+    script:
+        - echo "[Production] Deploying to gae..."
+        - echo $SERVICE_ACCOUNT > SERVICE_ACCOUNT.json
+        - dpl gae --project=$GAE_ID --keyfile=SERVICE_ACCOUNT.json
+        - echo "[Production] Deployed to gae."
+    only:
+        - main
+        
+pages:
+    stage: pages-deploy
+    variables:
+        GIT_STRATEGY: none
+    script:
+        - echo "Deploying public/ directory..."
+        - cp build public
+        - echo "Deployed public/ directory..."
+    artifacts:
+        paths:
+            - public
+    only:
+        - main

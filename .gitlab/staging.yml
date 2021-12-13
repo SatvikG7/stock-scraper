@@ -1,0 +1,30 @@
+image: ruby:latest
+
+before_script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+
+stages:
+    - staging
+
+staging-heroku-job:
+    type: deploy
+    stage: staging
+    script:
+        - echo "[Staging] Deploying to heroku..."
+        - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY
+        - echo "[Staging] Deployed to heroku."
+    only:
+        - staging
+
+staging-gae-job:
+    type: deploy
+    stage: staging
+    script:
+        - echo "[Staging] Deploying to gae..."
+        - echo $SERVICE_ACCOUNT > SERVICE_ACCOUNT.json
+        - dpl gae --project=$GAE_STAGING_ID --config=staging-app.yaml --keyfile=SERVICE_ACCOUNT.json
+        - echo "[Staging] Deployed to gae."
+    only:
+        - staging
