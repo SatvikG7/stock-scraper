@@ -4,6 +4,7 @@ stages:
     - install
     - build
     - lint and test
+    - trigger
 
 cache:
     paths:
@@ -40,14 +41,16 @@ test-job:
         - yarn test
         - echo "All unit tests completed with no error."
 
-staging-job:
+staging:
+    stage: trigger
     trigger:
-        include: .gitlab/staging.yml
+        include: ".gitlab/staging.yml"
     only:
         - staging
 
-production-job:
+production:
+    stage: trigger
     trigger:
-        include: .gitlab/production.yml
+        include: ".gitlab/production.yml"
     only:
         - main
