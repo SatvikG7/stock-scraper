@@ -4,3 +4,4 @@
 .env.example
 .nyc_output
 coverage
+*.yaml
