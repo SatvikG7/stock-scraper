@@ -20,11 +20,13 @@ staging-heroku-job:
 
 staging-gae-job:
     type: deploy
+    image: google/cloud-sdk:alpine
     stage: staging
     script:
         - echo "[Staging] Deploying to gae..."
         - echo $SERVICE_ACCOUNT > SERVICE_ACCOUNT.json
-        - dpl --provider=gae --project=$GAE_STAGING_ID --config=staging-app.yaml --keyfile=SERVICE_ACCOUNT.json
+        - gcloud auth activate-service-account --key-file SERVICE_ACCOUNT.json
+        - gcloud --quiet --project $GAE_ID app deploy staging-app.yaml staging-dispatch.yaml
         - echo "[Staging] Deployed to gae."
     only:
         - staging
