@@ -19,29 +19,16 @@ production-heroku-job:
     only:
         - main
 
-production-gae-job:
-    type: deploy
-    image: google/cloud-sdk:slim
-    stage: production
-    script:
-        - echo "[Production] Deploying to gae..."
-        - echo $SERVICE_ACCOUNT > SERVICE_ACCOUNT.json
-        - gcloud auth activate-service-account --key-file SERVICE_ACCOUNT.json
-        - gcloud --quiet --project $GAE_ID app deploy app.yaml dispatch.yaml
-        - echo "[Production] Deployed to gae."
-    only:
-        - main
-        
 pages:
     stage: pages-deploy
     variables:
         GIT_STRATEGY: none
     script:
         - echo "Deploying public/ directory..."
-        - cp build public
+        # - cp build public
         - echo "Deployed public/ directory..."
     artifacts:
         paths:
-            - public
+            - build
     only:
         - main
