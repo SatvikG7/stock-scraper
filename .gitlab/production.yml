@@ -7,7 +7,6 @@ before_script:
 
 stages:
     - production
-    - pages-deploy
 
 production-heroku-job:
     type: deploy
@@ -16,19 +15,5 @@ production-heroku-job:
         - echo "[Production] Deploying to heroku..."
         - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
         - echo "[Production] Deployed to heroku."
-    only:
-        - main
-
-pages:
-    stage: pages-deploy
-    variables:
-        GIT_STRATEGY: none
-    script:
-        - echo "Deploying public/ directory..."
-        # - cp build public
-        - echo "Deployed public/ directory..."
-    artifacts:
-        paths:
-            - build
     only:
         - main

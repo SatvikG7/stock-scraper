@@ -29,6 +29,7 @@ build-job:
  
 lint-job:
     stage: lint and test
+    needs: [build-job]
     script:
         - echo "Linting code..."
         - yarn lint
@@ -36,6 +37,7 @@ lint-job:
 
 test-job:
     stage: lint and test
+    needs: [build-job]
     script:
         - echo "Running unit tests..."
         - yarn test
@@ -43,6 +45,9 @@ test-job:
 
 staging:
     stage: trigger
+    needs:
+      - lint-job
+      - test-job
     trigger:
         include: ".gitlab/staging.yml"
     only:
@@ -50,7 +55,22 @@ staging:
 
 production:
     stage: trigger
+    needs:
+      - lint-job
+      - test-job
     trigger:
         include: ".gitlab/production.yml"
+    only:
+        - main
+
+pages:
+    stage: trigger
+    needs:
+      - lint-job
+      - test-job
+      - job: build-job
+        artifacts: true
+    trigger:
+        include: ".gitlab/pages.yml"
     only:
         - main

@@ -1,9 +1,0 @@
-dispatch:
-  - url: "stock-scraper.ml/*"
-    service: default
-
-  - url: "www.stock-scraper.ml/*"
-    service: default
-
-  - url: "staging.stock-scraper.ml/*"
-    service: staging
