@@ -12,7 +12,9 @@
 		"test": "tap \"test/**/*.test.js\" --coverage --coverage-report=lcov",
 		"build": "node ./scripts/build.js",
 		"postbuild": "prettier --write .",
-		"lint": "eslint --fix --ext .js app.js {routes,scripts,test,utils}/*.js {routes,test}/**/*.js"
+		"prettier": "prettier --write .",
+		"lint": "eslint --cache --fix app.js {routes,scripts,test,utils}/*.js {routes,test}/**/*.js",
+		"prepare": "husky install"
 	},
 	"repository": {
 		"type": "git",
@@ -47,9 +49,15 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"highlight.js": "^11.3.1",
+		"husky": "^7.0.4",
+		"lint-staged": "^12.1.2",
 		"marked": "^4.0.6",
 		"pino-pretty": "^7.2.0",
 		"prettier": "2.5.0",
 		"tap": "^15.0.9"
+	},
+	"lint-staged": {
+		"*.js": "eslint --cache --fix",
+		"*.html": "prettier --write ."
 	}
 }

@@ -40,10 +40,10 @@ generate("docs", docs_body_content);
 generateFavicon();
 var endTime = performance.now();
 
-console.log(chalk.blue.bgGray(" Built "));
+console.log(chalk.blue.bold.bgWhite(" Built "));
 console.log(chalk.yellow("build/index.html"));
 console.log(chalk.yellow("build/docs.html"));
-console.log(chalk.yellow("build/favicon"));
-console.log("in", chalk.red.bgGray(endTime - startTime), "ms");
+console.log(chalk.yellow("build/favicon.ico"));
+console.log("in", chalk.red.bold.bgWhite(endTime - startTime), "ms");
 console.log("");
-console.log(chalk.cyan("Now linting files..."));
+console.log(chalk.green("Now running prettier..."));

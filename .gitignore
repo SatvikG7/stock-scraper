@@ -60,3 +60,7 @@ profile*
 
 # env files
 .env
+.env.local
+
+# eslint cache
+.eslintcache

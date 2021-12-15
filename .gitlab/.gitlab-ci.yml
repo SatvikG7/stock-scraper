@@ -3,8 +3,10 @@ image: node:16.13.1
 stages:
     - install
     - build
-    - lint and test
+    - lint 
+    - test
     - trigger
+    - pages-deploy
 
 cache:
     paths:
@@ -28,16 +30,14 @@ build-job:
             - build/ 
  
 lint-job:
-    stage: lint and test
-    needs: [build-job]
+    stage: lint
     script:
         - echo "Linting code..."
         - yarn lint
         - echo "No lint issues found."
 
 test-job:
-    stage: lint and test
-    needs: [build-job]
+    stage: test
     script:
         - echo "Running unit tests..."
         - yarn test
@@ -64,13 +64,16 @@ production:
         - main
 
 pages:
-    stage: trigger
-    needs:
-      - lint-job
-      - test-job
-      - job: build-job
-        artifacts: true
-    trigger:
-        include: ".gitlab/pages.yml"
+    image: alpine:latest
+    stage: pages-deploy
+    variables:
+        GIT_STRATEGY: none
+    script:
+        - echo "Deploying public/ directory..."
+        - cp build public
+        - echo "Deployed public/ directory..."
+    artifacts:
+        paths:
+            - public
     only:
         - main

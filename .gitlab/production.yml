@@ -5,12 +5,8 @@ before_script:
     - apt-get install -y ruby-dev
     - gem install dpl
 
-stages:
-    - production
-
-production-heroku-job:
+production-job:
     type: deploy
-    stage: production
     script:
         - echo "[Production] Deploying to heroku..."
         - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
