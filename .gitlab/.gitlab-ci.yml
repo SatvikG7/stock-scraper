@@ -6,6 +6,7 @@ stages:
     - lint 
     - test
     - trigger
+    - pages-deploy
 
 cache:
     paths:
@@ -30,7 +31,6 @@ build-job:
  
 lint-job:
     stage: lint
-    needs: [build-job]
     script:
         - echo "Linting code..."
         - yarn lint
@@ -38,7 +38,6 @@ lint-job:
 
 test-job:
     stage: test
-    needs: [lint-job]
     script:
         - echo "Running unit tests..."
         - yarn test
@@ -66,9 +65,7 @@ production:
 
 pages:
     image: alpine:latest
-    needs:
-        - lint-job
-        - test-job
+    stage: pages-deploy
     variables:
         GIT_STRATEGY: none
     script:
