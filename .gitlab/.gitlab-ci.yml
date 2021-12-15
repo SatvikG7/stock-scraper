@@ -70,7 +70,7 @@ pages:
         GIT_STRATEGY: none
     script:
         - echo "Deploying public/ directory..."
-        - cp build public
+        - mv build public
         - echo "Deployed public/ directory..."
     artifacts:
         paths:
