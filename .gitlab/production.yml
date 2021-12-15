@@ -7,7 +7,6 @@ before_script:
 
 production-job:
     type: deploy
-    stage: production
     script:
         - echo "[Production] Deploying to heroku..."
         - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
