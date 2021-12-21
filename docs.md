@@ -4,8 +4,8 @@
 
 ### Endpoints
 
--   [https:/stock-scraper-api.herokuapp.com/api/](https:/stock-scraper-api.herokuapp.com/api/)
--   [https:/stock-scraper-api.herokuapp.com/api/:ticker/:exchange](https:/stock-scraper-api.herokuapp.com/api/:ticker/:exchange/)
+-   [https://stock-scraper-api.herokuapp.com/api/](https://stock-scraper-api.herokuapp.com/api/)
+-   [https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange](https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange/)
 
 ### Examples
 
@@ -17,7 +17,7 @@
     	"x-api-key": "your-key"
     };
 
-    fetch("https:/stock-scraper-api.herokuapp.com/api/", {
+    fetch("https://stock-scraper-api.herokuapp.com/api/", {
     	method: "GET",
     	headers: headersList
     })
@@ -35,7 +35,7 @@
     {
     	"message": "Authenticated in Stocks API",
     	"usage": [
-    		"GET https:/stock-scraper-api.herokuapp.com/api/:ticker/:exchange",
+    		"GET https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange",
     		"x-api-key in header"
     	]
     }
@@ -49,7 +49,7 @@
     	"x-api-key": "your-key"
     };
 
-    fetch("https:/stock-scraper-api.herokuapp.com/api/MSFT/NASDAQ", {
+    fetch("https://stock-scraper-api.herokuapp.com/api/MSFT/NASDAQ", {
     	method: "GET",
     	headers: headersList
     })
