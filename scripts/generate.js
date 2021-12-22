@@ -6,6 +6,16 @@ var doctype_tag, html_tag, head_tag, style_tag, body_tag;
 var html_content, head_content, title_content, style_content;
 
 const generate = (page, body_content) => {
+	head_content = `
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	`;
+	style_content = fs.readFileSync(
+		"node_modules/highlight.js/styles/gradient-dark.css",
+		"utf8"
+	);
+
 	if (page === "index") {
 		title_content = "Stock Scraper API";
 		style_content += customCSS.index;
@@ -13,18 +23,9 @@ const generate = (page, body_content) => {
 		title_content = "Stock Scraper API";
 		style_content += customCSS.docs;
 	}
-
-	head_content = `
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	head_content += `
 	<title>${title_content}</title>
 	`;
-	style_content = fs.readFileSync(
-		"node_modules/highlight.js/styles/gradient-dark.css",
-		"utf8"
-	);
-
 	style_tag = `
 	<style>
 		${style_content}
