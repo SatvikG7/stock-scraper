@@ -9,9 +9,9 @@
 	"scripts": {
 		"start": "fastify start -l info app.js",
 		"dev": "fastify start -w -l info -P app.js",
-		"test": "tap \"test/**/*.test.js\" --coverage --coverage-report=lcov",
 		"build": "node ./scripts/build.js",
 		"postbuild": "prettier --write .",
+		"test": "tap \"test/**/*.test.js\" --coverage --coverage-report=lcov",
 		"prettier": "prettier --write .",
 		"lint": "eslint --cache --fix app.js {routes,scripts,test,utils}/*.js {routes,test}/**/*.js",
 		"prepare": "husky install"

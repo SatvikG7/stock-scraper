@@ -10,7 +10,6 @@ const generate = (page, body_content) => {
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>${title_content}</title>
 	`;
 	style_content = fs.readFileSync(
 		"node_modules/highlight.js/styles/gradient-dark.css",
@@ -24,7 +23,9 @@ const generate = (page, body_content) => {
 		title_content = "Stock Scraper API";
 		style_content += customCSS.docs;
 	}
-
+	head_content += `
+	<title>${title_content}</title>
+	`;
 	style_tag = `
 	<style>
 		${style_content}

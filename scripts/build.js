@@ -16,6 +16,7 @@ const json = require("highlight.js/lib/languages/json");
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("json", json);
 
+// Generate index.html
 const marked = require("marked");
 const raw_index_body_content = fs.readFileSync("README.md", "utf8");
 const index_body_content = marked.marked(raw_index_body_content, {
