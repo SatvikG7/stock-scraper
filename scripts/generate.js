@@ -6,6 +6,14 @@ var doctype_tag, html_tag, head_tag, style_tag, body_tag;
 var html_content, head_content, title_content, style_content;
 
 const generate = (page, body_content) => {
+	if (page === "index") {
+		title_content = "Stock Scraper API";
+		style_content += customCSS.index;
+	} else if (page === "docs") {
+		title_content = "Stock Scraper API";
+		style_content += customCSS.docs;
+	}
+
 	head_content = `
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,14 +24,6 @@ const generate = (page, body_content) => {
 		"node_modules/highlight.js/styles/gradient-dark.css",
 		"utf8"
 	);
-
-	if (page === "index") {
-		title_content = "Stock Scraper API";
-		style_content += customCSS.index;
-	} else if (page === "docs") {
-		title_content = "Stock Scraper API";
-		style_content += customCSS.docs;
-	}
 
 	style_tag = `
 	<style>
