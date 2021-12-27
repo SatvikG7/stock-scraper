@@ -31,6 +31,8 @@ build-job:
  
 lint-job:
     stage: lint
+    needs:
+      - build-job
     script:
         - echo "Linting code..."
         - yarn run lint
@@ -69,6 +71,8 @@ production:
 pages:
     image: alpine:latest
     stage: pages-deploy
+    needs:
+      - build-job
     variables:
         GIT_STRATEGY: none
     script:
