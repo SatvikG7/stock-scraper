@@ -1,5 +1,5 @@
 const fs = require("fs");
-const customCSS = require("./customCSS.js");
+const customCSS = require("./customcss.js");
 
 var HTML;
 var doctype_tag, html_tag, head_tag, style_tag, body_tag;
