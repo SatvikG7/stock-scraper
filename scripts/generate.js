@@ -18,10 +18,10 @@ const generate = (page, body_content) => {
 
 	if (page === "index") {
 		title_content = "Stock Scraper API";
-		style_content += customCSS.index;
+		style_content += customCSS.common + customCSS.index;
 	} else if (page === "docs") {
 		title_content = "Stock Scraper API";
-		style_content += customCSS.docs;
+		style_content += customCSS.common + customCSS.docs;
 	}
 	head_content += `
 	<title>${title_content}</title>

@@ -23,7 +23,7 @@ build-job:
     stage: build
     script:
         - echo "Compiling *.md"
-        - yarn build
+        - yarn run build
         - echo "Compiled *.md to build/*.html."
     artifacts:
         paths:
@@ -31,16 +31,21 @@ build-job:
  
 lint-job:
     stage: lint
+    needs:
+      - build-job
     script:
         - echo "Linting code..."
-        - yarn lint
+        - yarn run lint
+        - yarn run prettier
         - echo "No lint issues found."
 
 test-job:
     stage: test
+    needs:
+      - build-job
     script:
         - echo "Running unit tests..."
-        - yarn test
+        - yarn run test
         - echo "All unit tests completed with no error."
 
 staging:
@@ -66,6 +71,8 @@ production:
 pages:
     image: alpine:latest
     stage: pages-deploy
+    needs:
+      - build-job
     variables:
         GIT_STRATEGY: none
     script:
