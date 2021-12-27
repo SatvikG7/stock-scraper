@@ -39,6 +39,8 @@ lint-job:
 
 test-job:
     stage: test
+    needs:
+      - build-job
     script:
         - echo "Running unit tests..."
         - yarn run test
