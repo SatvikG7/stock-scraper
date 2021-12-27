@@ -34,10 +34,13 @@ lint-job:
     script:
         - echo "Linting code..."
         - yarn lint
+        - yarn prettier
         - echo "No lint issues found."
 
 test-job:
     stage: test
+    needs:
+      - build-job
     script:
         - echo "Running unit tests..."
         - yarn test
