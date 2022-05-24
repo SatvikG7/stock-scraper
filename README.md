@@ -2,7 +2,9 @@
 
 <!-- markdownlint-disable MD001 MD013 -->
 
-[![pipeline status](https://gitlab.com/SatvikG7/stock-scraper/badges/main/pipeline.svg)](https://gitlab.com/SatvikG7/stock-scraper/-/commits/main) [![Coverage Status](https://coveralls.io/repos/gitlab/SatvikG7/stock-scraper/badge.svg?branch=main)](https://coveralls.io/gitlab/SatvikG7/stock-scraper?branch=main)
+[![pipeline status](https://gitlab.com/SatvikG7/stock-scraper/badges/main/pipeline.svg)](https://gitlab.com/SatvikG7/stock-scraper/-/commits/main) [![Coverage Status](https://coveralls.io/repos/gitlab/SatvikG7/stock-scraper/badge.svg?branch=main)](https://coveralls.io/gitlab/SatvikG7/stock-scraper?branch=main)<a href="https://rapidapi.com/satvik.g.code/api/stock-scraper" target="_blank">
+    <img src="https://storage.googleapis.com/rapidapi-documentation/connect-on-rapidapi-dark.png" width="215" alt="Connect on RapidAPI">
+</a>
 
 Api for scraping value of stock from Google Finance or Yahoo Finance(Coming Soon).
 
@@ -10,12 +12,11 @@ Api for scraping value of stock from Google Finance or Yahoo Finance(Coming Soon
 
 ### Documentation
 
-Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.herokuapp.com/docs) for detailed documentation of api
+Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.herokuapp.com/docs) for documentation of API
 
-### Endpoints
+### API Endpoint and API_KEY
 
--   [https://stock-scraper-api.herokuapp.com/api/](https://stock-scraper-api.herokuapp.com/api/)
--   [https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange](https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange)
+- Get your api endpoint and API_KEY from https://rapidapi.com/satvik.g.code/api/stock-scraper/
 
 ### Examples
 
@@ -23,11 +24,12 @@ Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.h
 
     ```javascript
     let headersList = {
-    	Accept: "*/*",
-    	"x-api-key": "your-key"
+    	"Accept": "*/*",
+    	"X-RapidAPI-Host": "<API_ENDPOINT>",
+		"X-RapidAPI-Key": "<API_KEY"
     };
 
-    fetch("https://stock-scraper-api.herokuapp.com/api/", {
+    fetch("<API_ENDPOINT>/api/", {
     	method: "GET",
     	headers: headersList
     })
@@ -43,11 +45,12 @@ Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.h
 
     ```javascript
     let headersList = {
-    	Accept: "*/*",
-    	"x-api-key": "your-key"
+    	:Accept:: "*/*",
+    	"X-RapidAPI-Host": "<API_ENDPOINT>",
+		"X-RapidAPI-Key": "<API_KEY>"
     };
 
-    fetch("https://stock-scraper-api.herokuapp.com/api/MSFT/NASDAQ", {
+    fetch("<API_ENDPOINT>/api/MSFT/NASDAQ", {
     	method: "GET",
     	headers: headersList
     })
