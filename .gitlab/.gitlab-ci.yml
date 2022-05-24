@@ -37,7 +37,7 @@ lint-job:
         - echo "Linting code..."
         - yarn run lint
         - yarn run prettier
-        - echo "No lint issues found."
+        - echo "No linting issues found."
 
 test-job:
     stage: test
