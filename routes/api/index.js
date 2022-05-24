@@ -16,8 +16,7 @@ module.exports = async function (fastify, opts) {
 		},
 		handler: () => {
 			return {
-				message: "Authenticated in Stocks API",
-				usage: ["GET /api/:ticker/:exchange", "x-api-key in header"]
+				message: "Authenticated in Stocks API"
 			};
 		}
 	});

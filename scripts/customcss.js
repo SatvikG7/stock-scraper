@@ -34,7 +34,7 @@ const customCSS = {
 			color: #00ff7f;
 		}
 
-		#documentation, #endpoints, #examples{
+		#documentation, #api_endpoint-and-api_key, #examples{
 			color: #ff7f50;
 		}
 	`,
@@ -43,7 +43,7 @@ const customCSS = {
 			color: #00ff7f;
 		}
 
-		#endpoints, #examples{
+		#api_endpoint-and-api_key, #examples{
 			color: #ff7f50;
 		}
 	`

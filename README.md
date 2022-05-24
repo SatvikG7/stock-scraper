@@ -16,7 +16,7 @@ Api for scraping value of stock from Google Finance or Yahoo Finance(Coming Soon
 
 Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.herokuapp.com/docs) for documentation of API
 
-### API Endpoint and API_KEY
+### API_Endpoint and API_KEY
 
 - Get your api endpoint and API_KEY from https://rapidapi.com/satvik.g.code/api/stock-scraper/
 
