@@ -16,7 +16,7 @@ module.exports = async function (fastify, opts) {
 		},
 		handler: () => {
 			return {
-				message: "Authenticated in Stocks API"
+				message: "Authenticated in Stock Scraper API"
 			};
 		}
 	});

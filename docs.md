@@ -8,10 +8,10 @@
 
     ```javascript
     let headersList = {
-		"Accept": "*/*",
-		"X-RapidAPI-Host": "<API_ENDPOINT>",
-		"X-RapidAPI-Key": "<API_KEY"
-	};
+    	Accept: "*/*",
+    	"X-RapidAPI-Host": "<API_ENDPOINT>",
+    	"X-RapidAPI-Key": "<API_KEY>"
+    };
 
     fetch("<API_ENDPOINT>/api/", {
     	method: "GET",
@@ -29,7 +29,7 @@
 
     ```json
     {
-    	"message": "Authenticated in Stocks API",
+    	"message": "Authenticated in Stock Scraper API"
     }
     ```
 
@@ -37,10 +37,10 @@
 
     ```javascript
     let headersList = {
-		"Accept": "*/*",
-		"X-RapidAPI-Host": "<API_ENDPOINT>",
-		"X-RapidAPI-Key": "<API_KEY"
-	};
+    	Accept: "*/*",
+    	"X-RapidAPI-Host": "<API_ENDPOINT>",
+    	"X-RapidAPI-Key": "<API_KEY>"
+    };
 
     fetch("<API_ENDPOINT>/api/MSFT/NASDAQ", {
     	method: "GET",

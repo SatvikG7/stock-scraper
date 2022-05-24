@@ -18,7 +18,7 @@ Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.h
 
 ### API_Endpoint and API_KEY
 
-- Get your api endpoint and API_KEY from https://rapidapi.com/satvik.g.code/api/stock-scraper/
+-   Get your api endpoint and API_KEY from https://rapidapi.com/satvik.g.code/api/stock-scraper/
 
 ### Examples
 
@@ -26,9 +26,9 @@ Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.h
 
     ```javascript
     let headersList = {
-    	"Accept": "*/*",
+    	Accept: "*/*",
     	"X-RapidAPI-Host": "<API_ENDPOINT>",
-		"X-RapidAPI-Key": "<API_KEY"
+    	"X-RapidAPI-Key": "<API_KEY"
     };
 
     fetch("<API_ENDPOINT>/api/", {
@@ -49,7 +49,7 @@ Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.h
     let headersList = {
     	:Accept:: "*/*",
     	"X-RapidAPI-Host": "<API_ENDPOINT>",
-		"X-RapidAPI-Key": "<API_KEY>"
+    	"X-RapidAPI-Key": "<API_KEY>"
     };
 
     fetch("<API_ENDPOINT>/api/MSFT/NASDAQ", {
