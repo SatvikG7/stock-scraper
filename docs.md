@@ -2,11 +2,6 @@
 
 ## Documentation
 
-### Endpoints
-
--   [https://stock-scraper-api.herokuapp.com/api/](https://stock-scraper-api.herokuapp.com/api/)
--   [https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange](https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange/)
-
 ### Examples
 
 1. Code to check if you have valid api key
@@ -14,10 +9,11 @@
     ```javascript
     let headersList = {
     	Accept: "*/*",
-    	"x-api-key": "your-key"
+    	"X-RapidAPI-Host": "<API_ENDPOINT>",
+    	"X-RapidAPI-Key": "<API_KEY>"
     };
 
-    fetch("https://stock-scraper-api.herokuapp.com/api/", {
+    fetch("<API_ENDPOINT>/api/", {
     	method: "GET",
     	headers: headersList
     })
@@ -33,11 +29,7 @@
 
     ```json
     {
-    	"message": "Authenticated in Stocks API",
-    	"usage": [
-    		"GET https://stock-scraper-api.herokuapp.com/api/:ticker/:exchange",
-    		"x-api-key in header"
-    	]
+    	"message": "Authenticated in Stock Scraper API"
     }
     ```
 
@@ -46,10 +38,11 @@
     ```javascript
     let headersList = {
     	Accept: "*/*",
-    	"x-api-key": "your-key"
+    	"X-RapidAPI-Host": "<API_ENDPOINT>",
+    	"X-RapidAPI-Key": "<API_KEY>"
     };
 
-    fetch("https://stock-scraper-api.herokuapp.com/api/MSFT/NASDAQ", {
+    fetch("<API_ENDPOINT>/api/MSFT/NASDAQ", {
     	method: "GET",
     	headers: headersList
     })
