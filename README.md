@@ -8,13 +8,13 @@
     <img src="https://storage.googleapis.com/rapidapi-documentation/connect-on-rapidapi-dark.png" width="215" alt="Connect on RapidAPI">
 </a>
 
-Api for scraping value of stock from Google Finance or Yahoo Finance(Coming Soon).
+Api for scraping value of stock from Google Finance.
 
 ## Getting started
 
 ### Documentation
 
-Visit [https://stock-scraper-api.herokuapp.com/docs](https://stock-scraper-api.herokuapp.com/docs) for documentation of API
+Visit [https://stock-scraper.onrender.com/docs](https://stock-scraper.onrender.com/docs) for documentation of API
 
 ### API_Endpoint and API_KEY
 
