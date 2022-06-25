@@ -47,7 +47,7 @@ Visit [https://stock-scraper.onrender.com/docs](https://stock-scraper.onrender.c
 
     ```javascript
     let headersList = {
-    	:Accept:: "*/*",
+    	Accept: "*/*",
     	"X-RapidAPI-Host": "<API_ENDPOINT>",
     	"X-RapidAPI-Key": "<API_KEY>"
     };
