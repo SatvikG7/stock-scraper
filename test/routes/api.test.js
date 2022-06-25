@@ -27,8 +27,7 @@ test("Test /api/ route", async (t) => {
 	});
 	t.equal(res.statusCode, 200, "Api key is required for API route");
 	t.same(JSON.parse(res.payload), {
-		message: "Authenticated in Stocks API",
-		usage: ["GET /api/:ticker/:exchange", "x-api-key in header"]
+		message: "Authenticated in Stock Scraper API"
 	});
 });
 
