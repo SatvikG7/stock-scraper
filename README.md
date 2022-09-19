@@ -1,5 +1,7 @@
 # Stock Scraper Api
 
+>**IMP: This project has been stopped as Heroku has withdrawn it's free plan. Please use https://github.com/SatvikG7/stock-scraper-api.**
+
 <!-- markdownlint-disable MD001 MD013 -->
 
 [![pipeline status](https://gitlab.com/SatvikG7/stock-scraper/badges/main/pipeline.svg)](https://gitlab.com/SatvikG7/stock-scraper/-/commits/main) [![Coverage Status](https://coveralls.io/repos/gitlab/SatvikG7/stock-scraper/badge.svg?branch=main)](https://coveralls.io/gitlab/SatvikG7/stock-scraper?branch=main)
