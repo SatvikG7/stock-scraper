@@ -1,6 +1,6 @@
 # Stock Scraper Api
 
->**IMP: This project has been stopped as Heroku has withdrawn it's free plan. Please use https://github.com/SatvikG7/stock-scraper-api.**
+>**IMP: This project has been stopped as Heroku has withdrawn it's free plan. Please use https://gitlab.com/SatvikG7/stock-scraper/.**
 
 <!-- markdownlint-disable MD001 MD013 -->
 
